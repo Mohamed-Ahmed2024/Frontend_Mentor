@@ -1,0 +1,60 @@
+:root {
+  --purple:#7b5cff;
+  --black:#0e0f14;
+  --yellow:#ffd166;
+  --mint:#ccf6e4;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f8f9fa;
+}
+
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.highlight {
+  background: var(--yellow);
+  padding: 0 .3rem;
+  border-radius: .3rem;
+}
+
+.accent-purple { background: var(--purple); color:#fff; }
+.accent-yellow { background: var(--yellow); }
+.accent-green  { background: var(--mint); }
+.accent-black  { background: var(--black); }
+.accent-white  { background: #fff; }
+
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a a b c"
+      "a a e d"
+      "f g e h";
+  }
+  .bento-grid > div:nth-child(1){ grid-area:a; }
+  .bento-grid > div:nth-child(2){ grid-area:b; }
+  .bento-grid > div:nth-child(3){ grid-area:c; }
+  .bento-grid > div:nth-child(4){ grid-area:d; }
+  .bento-grid > div:nth-child(5){ grid-area:e; }
+  .bento-grid > div:nth-child(6){ grid-area:f; }
+  .bento-grid > div:nth-child(7){ grid-area:g; }
+  .bento-grid > div:nth-child(8){ grid-area:h; }
+}
